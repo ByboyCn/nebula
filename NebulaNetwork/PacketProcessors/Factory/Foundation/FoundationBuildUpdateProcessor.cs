@@ -1,4 +1,4 @@
-﻿#region
+#region
 
 using System;
 using NebulaAPI;
@@ -49,9 +49,9 @@ internal class FoundationBuildUpdateProcessor : PacketProcessor<FoundationBuildU
             var getSandCount = 0; // dummy value, won't use
             if (!packet.IsCircle) //Normal reform
             {
-                var reformPointsCount = factory.planet.aux.ReformSnap(packet.GroundTestPos.ToVector3(), packet.ReformSize,
-                    packet.ReformType, packet.ReformColor, reformPoints, packet.ReformIndices, factory.platformSystem,
-                    out var reformCenterPoint);
+                var reformPointsCount = factory.planet.aux.ReformSnap(packet.GroundTestPos.ToVector3(), packet.ReformMode,
+                    packet.ReformSize, packet.ReformType, packet.ReformColor, reformPoints, packet.ReformIndices,
+                    factory.platformSystem, out var reformCenterPoint);
                 factory.ComputeFlattenTerrainReform(reformPoints, reformCenterPoint, packet.Radius, reformPointsCount, ref costSandCount, ref getSandCount);
                 center = reformCenterPoint;
                 area = packet.ReformSize * packet.ReformSize;

@@ -1,4 +1,4 @@
-﻿#region
+#region
 
 using NebulaAPI.DataStructures;
 using UnityEngine;
@@ -19,6 +19,7 @@ public class FoundationBuildUpdatePacket
         Fade0 = fade0;
         //Assume FlattenTerrainReform are all called in BuildTool_Reform
         var btr = GameMain.mainPlayer.controller.actionBuild.reformTool;
+        ReformMode = btr?.reformMode ?? 0;
         ReformType = btr?.brushType ?? -1;
         ReformColor = btr?.brushColor ?? -1;
         PlanetId = GameMain.mainPlayer.planetId;
@@ -43,6 +44,7 @@ public class FoundationBuildUpdatePacket
     public int ReformSize { get; set; }
     public bool VeinBuried { get; set; }
     public float Fade0 { get; set; }
+    public int ReformMode { get; set; }
     public int ReformType { get; set; }
     public int ReformColor { get; set; }
     public int PlanetId { get; set; }

@@ -1,5 +1,8 @@
 ## Changelog
 
+0.9.22.5:
+- Compatible with game version 0.10.35.29088 (FoundationBuildUpdatePacket now carries reformMode for terrain restore tool)
+
 0.9.22:
 - Compatible with game version 0.10.34.28518
 
